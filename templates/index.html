@@ -1,0 +1,18 @@
+﻿<!DOCTYPE html>
+<!-- #css読込 -->
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+<!-- #画像読込 -->
+<link rel="stylesheet" href="{{ url_for('static', filename='images/meeting.jpg') }}">
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speaker Separation</title>
+</head>
+<body>
+    <h1>Auto Minutes</h1>
+    <form action="upload" method="get">
+        <button class="btn_design">議事録を作成する</button>
+    </form>
+</body>
+</html>
