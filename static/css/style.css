@@ -82,3 +82,12 @@
         transform: translateY(-5px);
         cursor: pointer;
   }
+
+  .progress_bar{
+    width: 350px;
+    height: 30px;
+    display: block;
+    margin: 0 auto;
+    margin-top: 200px;
+    text-align: center;
+  }

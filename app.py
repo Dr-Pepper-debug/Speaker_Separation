@@ -34,8 +34,8 @@ def upload():
         stream = ffmpeg.output(stream, "C:\\Users\\takumi\\デスクトップ\\大学\\3年\\後期\\実験2\\発表\\convert_audio\\minutes.wav")
 
         ffmpeg.run(stream)
-        command_line.command_execution()
-        return '議事録作成中'
+        # command_line.command_execution()
+        return render_template('progress.html')
     elif request.method == 'GET':
         return render_template('upload.html')
 
