@@ -3,7 +3,7 @@ from pydub.silence import split_on_silence
 
 def silence_remove():
     # 音声ファイル読み込み
-    SOURCE_FILE =  'C:\\Users\\takumi\\デスクトップ\\大学\\3年\\後期\\実験2\\発表\\convert_audio\\minutes.wav'
+    SOURCE_FILE =  'C:\\Users\\takumi\\デスクトップ\\大学\\3年\\後期\\実験2\\発表\\convert_audio\\meeting.wav'
 
     sound = AudioSegment.from_file(SOURCE_FILE)
 
@@ -16,4 +16,4 @@ def silence_remove():
     # cutted_ms = len(cutted_sound)
     # print('silence_thresh = {}: {:.2f} [min]'.format(-55, cutted_ms/60/1000))
     # ファイルの書き出し
-    cutted_sound.export('C:\\Users\\takumi\\デスクトップ\\大学\\3年\\後期\\実験2\\発表\\convert_audio\\take_silence_removed.wav', format='wav')
+    cutted_sound.export('C:\\Users\\takumi\\デスクトップ\\大学\\3年\\後期\\実験2\\発表\\convert_audio\\meeting_silence_removed.wav', format='wav')

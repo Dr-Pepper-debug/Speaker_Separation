@@ -2,7 +2,7 @@
 
 def audio_cut():
     # wavファイルの読み込み
-    sound = AudioSegment.from_file("C:\\Users\\takumi\\デスクトップ\\大学\\3年\\後期\\実験2\\発表\\convert_audio\\take_silence_removed.wav", format="wav")
+    sound = AudioSegment.from_file("C:\\Users\\takumi\\デスクトップ\\大学\\3年\\後期\\実験2\\発表\\convert_audio\\meeting_silence_removed.wav", format="wav")
 
     # 時間を格納するリスト
     start_min = []

@@ -1,4 +1,4 @@
-﻿from flask import Flask, render_template, request, redirect, url_for, flash
+﻿from flask import Flask, render_template, request, send_file
 from werkzeug.utils import secure_filename
 from flask import send_from_directory
 
@@ -9,8 +9,6 @@ import python.command_line as command_line
 import python.silence_remove as silence_remove
 import python.audio_cut as audio_cut
 import python.txt_shaping as txt_shapint
-import python.predict_all as predict_all
-
 
 
 
@@ -37,7 +35,7 @@ def upload():
 
         # 動画ファイルを音声に変換
         stream = ffmpeg.input("C:\\Users\\takumi\\デスクトップ\\大学\\3年\\後期\\実験2\\発表\\uploads\\sample.mp4")
-        stream = ffmpeg.output(stream, "C:\\Users\\takumi\\デスクトップ\\大学\\3年\\後期\\実験2\\発表\\convert_audio\\minutes.wav")
+        stream = ffmpeg.output(stream, "C:\\Users\\takumi\\デスクトップ\\大学\\3年\\後期\\実験2\\発表\\convert_audio\\meeting.wav")
         ffmpeg.run(stream)
 
         # 無音部分の削除
@@ -47,10 +45,14 @@ def upload():
         # 時間ごとに分割
         audio_cut.audio_cut()
         # 分割音声の話者分類
-        predict_all.predict_all()
+        command_line.command_speaker_classification()
         # 議事録の作成
         txt_shapint.make_contents()
-        return render_template('progress.html')
+        # 作成した議事録のダウンロード
+        filepath = "content_result.txt"
+        filename = os.path.basename(filepath)
+        return send_file(filepath, as_attachment=True, download_name=filename, mimetype='text/plain')
+        # return render_template('progress.html')
     elif request.method == 'GET':
         return render_template('upload.html')
 
