@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<!-- #css読込 -->
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Play Sound</title>
+</head>
+<body>
+    <h1>話者入力</h1>
+    <form action="confirm" method="POST">
+        {% for speaker in speaker_dict %}
+        <li class="number">{{ speaker }}</li>
+        <div class="who">誰の声ですか?</div>
+        <div class="name_box">
+            <input type="text" id="name" name="item">
+        </div>
+        <div class="audio_control">
+            <audio controls src={{ speaker_dict[speaker] }} type="audio/mp3"></audio>
+        </div>
+        {% endfor %}
+        <input type="submit">確定</button>
+    </form>
+</body>
+</html>

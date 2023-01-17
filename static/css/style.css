@@ -83,11 +83,39 @@
         cursor: pointer;
   }
 
-  .progress_bar{
+  .li{
+    text-align: center;
+  }
+
+  .number{
+    text-align: center;
+  }
+
+  .who{
+    text-align: center;
+  }
+
+  .name_box{
+    text-align: center;
+    display: inline-block;
+    width: 100%;
+    padding: 0.5em;
+    margin: 0.5em 0;
+  }
+
+  .audio_control{
+    text-align: center;
+  }
+  /* <li>{{ speaker }}</li>
+    <div>誰の声ですか?</div>    
+    <input type="text" id="name" name="name" size="10">
+    <audio */
+
+  /* .progress_bar{
     width: 350px;
     height: 30px;
     display: block;
     margin: 0 auto;
     margin-top: 200px;
     text-align: center;
-  }
+  } */
